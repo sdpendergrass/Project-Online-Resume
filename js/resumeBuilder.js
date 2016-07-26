@@ -46,17 +46,14 @@ function displayBio() {
         $(id).append(formattedLocation);
         }
 
+
+
     $("#header").append(HTMLskillsStart);
 
-
-
-    var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
-    var skillsList = ["#header"];
-    for (var i = 0; i < skillsList.length; i++) {
-        id = skillsList[i];
-        $(id).append(formattedSkills);
-
-}
+    for (var i = 0; i < bio.skills.length; i++) {
+        var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+        $(skills).append(formattedSkills);
+        }
 
 
 }
@@ -64,7 +61,7 @@ function displayBio() {
 
 displayBio();
 
-/*
+
 
 //EDUCATION
 var education = {
@@ -83,9 +80,50 @@ var education = {
         "date": 2009,
         "url": "https://www.usm.edu"
     }]
-};
+}
+/*
+function displayEducation() {
+
+    var formattedSchoolName = HTMLschoolName.replace("%data%", schools.name);
+    var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", schools.city);
+    var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", schools.degree);
+    var formattedSchoolMajors = HTMLschoolMajor.replace("%data%", schools.majors);
+    var formattedSchoolDates = HTMLschoolDates.replace("%data%", schools.date);
+    //var formattedSchoolUrl = HTMLbioPic.replace("%data%", schools.url);
+
+    $("#education").append(formattedSchoolName);
+    $("#education").append(formattedSchoolLocation);
+    $("#education").append(formattedSchoolDegree);
+    $("#education").append(formattedSchoolMajors);
+    $("#education").append(formattedSchoolDates);
+    //$("#education").append(formattedSchoolUrl);
 
 
+    $("#education").append(HTMLschoolStart);
+
+    var educationInfo = ["#education"];
+    for (var i = 0; i < educationInfo.length; i++) {
+        id = educationInfo[i];
+        $(id).append(formattedMobile);
+        $(id).append(formattedEmail);
+        $(id).append(formattedGitHub);
+        $(id).append(formattedTwitter);
+        $(id).append(formattedLocation);
+        }
+
+         $("#header").append(HTMLskillsStart);
+
+    for (var i = 0; i < bio.skills.length; i++) {
+        var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+        $(skills).append(formattedSkills);
+        }
+}
+
+displayEducation();
+
+
+
+/*
 //WORK
 var work = {
     "jobs": [{
@@ -99,7 +137,7 @@ var work = {
         "dates": "August 2007- September 2014",
         "description": "Led the development of ..."
     }]
-};
+}
 
 
 //PROJECTS
@@ -114,6 +152,5 @@ var projects = {
             ]
         }
     ]
-};
-
+}
 */

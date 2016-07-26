@@ -107,7 +107,14 @@ a {
   display: none;
 }
 
-
+#skills {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
 .orange {
   background-color: #f5ae23;
 }
