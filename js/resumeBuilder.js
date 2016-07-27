@@ -67,16 +67,16 @@ displayBio();
 var education = {
     "schools": [{
         "name": "Harvard Extension School",
-        "city": "Cambridge, MA",
+        "location": "Cambridge, MA",
         "degree": "Master's Degree",
-        "majors": ["Journalism"],
+        "majors": ["Journalism (focused on professional writing and multimedia development"],
         "date": 2013,
         "url": "https://www.extension.harvard.edu"
     }, {
         "name": "University of Southern Mississippi",
-        "city": "Hattiesburg, MS",
+        "location": "Hattiesburg, MS",
         "degree": "Bachelor's Degree",
-        "majors": ["Mass Communications & Journalism"],
+        "majors": ["Mass Communications (focused on film and television production)"],
         "date": 2009,
         "url": "https://www.usm.edu"
     }]
@@ -89,7 +89,7 @@ function displayEducation() {
         var formattedSchoolName = HTMLschoolName.replace("#", education.schools[i].url).replace("%data%", education.schools[i].name);
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
         var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].date);
-        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].city);
+        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
         var formattedSchoolMajors = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
         $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree);
         $('.education-entry:last').append(formattedSchoolLocation);
@@ -110,29 +110,36 @@ var work = {
     "jobs": [{
         "employer": "Paragon Offshore",
         "title": "Multimedia Production Manager",
-        "dates": "Oct 2014 - April 2016",
-        "description": "Led the development of ..."
+        "location" : "Houston, TX",
+        "dates": "2014 - 2016",
+        "description": "Led the development of ...",
+        "url" : "http://www.paragonoffshore.com"
+
+
     }, {
         "employer": "Diamond Offshore",
         "title": "Multimedia Production Supervisor",
-        "dates": "August 2007- September 2014",
-        "description": "Led the development of ..."
+        "location" : "Houston, TX",
+        "dates": "2007 - 2014",
+        "description": "Led the development of ...",
+        "url" : "http://www.diamondoffshore.com"
+
     }]
 }
 
 function displayWorkExperience() {
 
     for (var i = 0; i < work.jobs.length; i++) {
-        $('#workExperience').append(HTMLschoolStart);
-        var formattedSchoolName = HTMLschoolName.replace("#", education.schools[i].url).replace("%data%", education.schools[i].name);
-        var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
-        var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].date);
-        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].city);
-        var formattedSchoolMajors = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
-        $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree);
-        $('.education-entry:last').append(formattedSchoolLocation);
-        $('.education-entry:last').append(formattedSchoolDates);
-        $('.education-entry:last').append(formattedSchoolMajors);
+        $('#workExperience').append(HTMLworkStart);
+        var formattedWorkEmployer = HTMLworkEmployer.replace("#", work.jobs[i].url).replace("%data%", work.jobs[i].employer);
+        var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+        var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
+        var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
+        var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+        $('.work-entry:last').append(formattedWorkEmployer + formattedWorkTitle);
+        $('.work-entry:last').append(formattedWorkLocation);
+        $('.work-entry:last').append(formattedWorkDates);
+        $('.work-entry:last').append(formattedWorkDescription);
 
     }
 
@@ -142,9 +149,6 @@ displayWorkExperience();
 
 
 
-
-
-/*
 //PROJECTS
 var projects = {
     "projects": [{
@@ -158,4 +162,28 @@ var projects = {
         }
     ]
 }
-*/
+
+
+function displayProjects() {
+
+    for (var i = 0; i < projects.projects.length; i++) {
+        $('#projects').append(HTMLprojectStart);
+        var formattedProjectTitle = HTMLprojectTitle.replace("#", projects.projects[i].title).replace("%data%", projects.projects[i].title);
+        var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
+        var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+        var formattedProjectImages = HTMLprojectImage.replace("%data%", projects.projects[i].images);
+        var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+        $('.project-entry').append(formattedProjectTitle);
+        $('.project-entry').append(formattedProjectDates);
+        $('.project-entry').append(formattedProjectDescription);
+        $('.project-entry').append(formattedProjectImages);
+
+    }
+
+}
+
+displayProjects();
+
+
+
+$('#mapDiv').append(googleMap);
