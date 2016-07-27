@@ -90,19 +90,18 @@ function displayEducation() {
     var formattedSchoolMajors = HTMLschoolMajor.replace("%data%", education.schools.majors);
     var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools.date);
 
-    $("#education").append(formattedSchoolName);
-    $("#education").append(formattedSchoolLocation);
-    $("#education").append(formattedSchoolDegree);
-    $("#education").append(formattedSchoolMajors);
-    $("#education").append(formattedSchoolDates);
+    $("#education-entry").append(formattedSchoolName);
+    $("#education-entry").append(formattedSchoolLocation);
+    $("#education-entry").append(formattedSchoolDegree);
+    $("#education-entry").append(formattedSchoolMajors);
+    $("#education-entry").append(formattedSchoolDates);
 
 
     $("#education").append(HTMLschoolStart);
 
-
     for (var i = 0; i < education.schools.length; i++) {
         var formattedEducation = HTMLschoolName.replace("%data%", education.schools[i]);
-        $(education).append(formattedEducation);
+        $(education-entry).append(formattedEducation);
     }
 
 }
