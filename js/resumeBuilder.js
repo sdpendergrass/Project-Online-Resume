@@ -8,7 +8,7 @@ var bio = {
     "name": "Stephen Pendergrass",
     "role": "Multimedia Developer",
     "contacts": {
-        "mobile": "fsfdghgfh",
+        "mobile": "fsfdghgfh222",
         "email": "email@.com",
         "github": "info goes here",
         "twitter": "info goes here",
@@ -81,42 +81,30 @@ var education = {
         "url": "https://www.usm.edu"
     }]
 }
-/*
+
 function displayEducation() {
 
-    var formattedSchoolName = HTMLschoolName.replace("%data%", schools.name);
-    var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", schools.city);
-    var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", schools.degree);
-    var formattedSchoolMajors = HTMLschoolMajor.replace("%data%", schools.majors);
-    var formattedSchoolDates = HTMLschoolDates.replace("%data%", schools.date);
-    //var formattedSchoolUrl = HTMLbioPic.replace("%data%", schools.url);
+    var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools.name);
+    var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools.city);
+    var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools.degree);
+    var formattedSchoolMajors = HTMLschoolMajor.replace("%data%", education.schools.majors);
+    var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools.date);
 
     $("#education").append(formattedSchoolName);
     $("#education").append(formattedSchoolLocation);
     $("#education").append(formattedSchoolDegree);
     $("#education").append(formattedSchoolMajors);
     $("#education").append(formattedSchoolDates);
-    //$("#education").append(formattedSchoolUrl);
 
 
     $("#education").append(HTMLschoolStart);
 
-    var educationInfo = ["#education"];
-    for (var i = 0; i < educationInfo.length; i++) {
-        id = educationInfo[i];
-        $(id).append(formattedMobile);
-        $(id).append(formattedEmail);
-        $(id).append(formattedGitHub);
-        $(id).append(formattedTwitter);
-        $(id).append(formattedLocation);
-        }
 
-         $("#header").append(HTMLskillsStart);
+    for (var i = 0; i < education.schools.length; i++) {
+        var formattedEducation = HTMLschoolName.replace("%data%", education.schools[i]);
+        $(education).append(formattedEducation);
+    }
 
-    for (var i = 0; i < bio.skills.length; i++) {
-        var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
-        $(skills).append(formattedSkills);
-        }
 }
 
 displayEducation();
