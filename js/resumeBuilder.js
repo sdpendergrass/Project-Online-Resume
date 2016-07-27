@@ -68,14 +68,14 @@ var education = {
     "schools": [{
         "name": "Harvard Extension School",
         "city": "Cambridge, MA",
-        "degree": "Masters",
+        "degree": "Master's Degree",
         "majors": ["Journalism"],
         "date": 2013,
         "url": "https://www.extension.harvard.edu"
     }, {
         "name": "University of Southern Mississippi",
         "city": "Hattiesburg, MS",
-        "degree": "Bachelors",
+        "degree": "Bachelor's Degree",
         "majors": ["Mass Communications & Journalism"],
         "date": 2009,
         "url": "https://www.usm.edu"
@@ -84,24 +84,18 @@ var education = {
 
 function displayEducation() {
 
-    var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools.name);
-    var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools.city);
-    var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools.degree);
-    var formattedSchoolMajors = HTMLschoolMajor.replace("%data%", education.schools.majors);
-    var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools.date);
-
-    $("#education-entry").append(formattedSchoolName);
-    $("#education-entry").append(formattedSchoolLocation);
-    $("#education-entry").append(formattedSchoolDegree);
-    $("#education-entry").append(formattedSchoolMajors);
-    $("#education-entry").append(formattedSchoolDates);
-
-
-    $("#education").append(HTMLschoolStart);
-
     for (var i = 0; i < education.schools.length; i++) {
-        var formattedEducation = HTMLschoolName.replace("%data%", education.schools[i]);
-        $(education-entry).append(formattedEducation);
+        $('#education').append(HTMLschoolStart);
+        var formattedSchoolName = HTMLschoolName.replace("#", education.schools[i].url).replace("%data%", education.schools[i].name);
+        var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
+        var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].date);
+        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].city);
+        var formattedSchoolMajors = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
+        $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree);
+        $('.education-entry:last').append(formattedSchoolLocation);
+        $('.education-entry:last').append(formattedSchoolDates);
+        $('.education-entry:last').append(formattedSchoolMajors);
+
     }
 
 }
@@ -110,7 +104,7 @@ displayEducation();
 
 
 
-/*
+
 //WORK
 var work = {
     "jobs": [{
@@ -126,7 +120,31 @@ var work = {
     }]
 }
 
+function displayWorkExperience() {
 
+    for (var i = 0; i < work.jobs.length; i++) {
+        $('#workExperience').append(HTMLschoolStart);
+        var formattedSchoolName = HTMLschoolName.replace("#", education.schools[i].url).replace("%data%", education.schools[i].name);
+        var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
+        var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].date);
+        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].city);
+        var formattedSchoolMajors = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
+        $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree);
+        $('.education-entry:last').append(formattedSchoolLocation);
+        $('.education-entry:last').append(formattedSchoolDates);
+        $('.education-entry:last').append(formattedSchoolMajors);
+
+    }
+
+}
+
+displayWorkExperience();
+
+
+
+
+
+/*
 //PROJECTS
 var projects = {
     "projects": [{
