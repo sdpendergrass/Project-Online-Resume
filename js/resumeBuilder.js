@@ -14,8 +14,8 @@ var bio = {
         "linkedin": "linkedin.com/in/stephenpendergrass",
         "location": "Nashville, TN"
     },
-    "welcomeMessage": "Hello and welcome to my resume.",
-    "skills": ['Video Production', 'Graphic Design', 'Web Development', 'Content Writing'],
+    "welcomeMessage": "I'm a creative professional who understands business.",
+    "skills": ['Content Writing', 'Video Production', 'Digital & Print Publishing', 'Instructional Design','Web Development',],
     "bioPic": "images/sdp.jpg"
 }
 

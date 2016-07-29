@@ -11,9 +11,7 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
-  //I added liststyle none so may need to remove it later
-  list-style: none;
+  font-family: "Arial", sans-serif;
 }
 
 
@@ -29,7 +27,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #F7C548;
   line-height: 48px;
   display: inline;
 }
@@ -37,7 +35,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #255957;
   line-height: 29px;
   padding: 10px;
 }
@@ -98,7 +96,7 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
+  color: #437C90;
   line-height: 28px;
 }
 
@@ -116,16 +114,16 @@ a {
   padding: 10px;
 }
 .orange {
-  background-color: #f5ae23;
+  background-color: #F7C548;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #F7C548;
 }
 
 .white-text {
   font-weight: bold;
-  color: #fff;
+  color: #EEEBD3;
 }
 
 .gray {
@@ -135,12 +133,20 @@ a {
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+  background-color: #28343b;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+
+
+background: #28343b;
+background: -moz-linear-gradient(top,  #28343b 12%, #828c95 100%, #b5bdc8 100%, #828c95 101%);
+background: -webkit-linear-gradient(top,  #28343b 12%,#828c95 100%,#b5bdc8 100%,#828c95 101%);
+background: linear-gradient(to bottom,  #28343b 12%,#828c95 100%,#b5bdc8 100%,#828c95 101%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28343b', endColorstr='#828c95',GradientType=0 );
+
+
 }
 
 .flex-box {
