@@ -8,10 +8,10 @@ var bio = {
     "name": "Stephen Pendergrass",
     "role": "Multimedia Developer",
     "contacts": {
-        "mobile": "fsfdghgfh222",
-        "email": "email@.com",
-        "github": "info goes here",
-        "twitter": "info goes here",
+        "mobile": "832-726-7119",
+        "email": "StephenDPendergrass@gmail.com",
+        "github": "github.com/sdpendergrass",
+        "linkedin": "linkedin.com/in/stephenpendergrass",
         "location": "Nashville, TN"
     },
     "welcomeMessage": "Hello and welcome to my resume.",
@@ -33,7 +33,7 @@ function displayBio() {
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedEmail = HTMLemail .replace("%data%", bio.contacts.email);
     var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
-    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    var formattedLinkedIn = HTMLlinkedIn.replace("%data%", bio.contacts.linkedin);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
     var contactInfo = ["#topContacts", "#footerContacts"];
@@ -42,7 +42,7 @@ function displayBio() {
         $(id).append(formattedMobile);
         $(id).append(formattedEmail);
         $(id).append(formattedGitHub);
-        $(id).append(formattedTwitter);
+        $(id).append(formattedLinkedIn);
         $(id).append(formattedLocation);
         }
 
@@ -124,6 +124,22 @@ var work = {
         "description": "Led the development of ...",
         "url" : "http://www.diamondoffshore.com"
 
+    }, {
+        "employer": "PSAV",
+        "title": "Audio-Visual Technician (Freelance & Full-time)",
+        "location" : "Philadelphia, PA",
+        "dates": "2005 - 2007",
+        "description": "Led the development of ...",
+        "url" : "http://www.psav.com"
+
+    }, {
+        "employer": "WCBI (CBS Affiliate)",
+        "title": "Production Assistant",
+        "location" : "Columbus, MS",
+        "dates": "2003 - 2005",
+        "description": "Led the development of ...",
+        "url" : "http://www.wcbi.com"
+
     }]
 }
 
@@ -156,8 +172,8 @@ var projects = {
             "dates": "2010",
             "description": "Crew Security Awareness / Judo App ...",
             "images": [
-                "url goes here",
-                "url goes here"
+                "https://placehold.it/350x150",
+
             ]
         }
     ]
