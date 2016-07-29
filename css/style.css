@@ -145,7 +145,10 @@ background: -moz-linear-gradient(top,  #28343b 12%, #828c95 100%, #b5bdc8 100%, 
 background: -webkit-linear-gradient(top,  #28343b 12%,#828c95 100%,#b5bdc8 100%,#828c95 101%);
 background: linear-gradient(to bottom,  #28343b 12%,#828c95 100%,#b5bdc8 100%,#828c95 101%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28343b', endColorstr='#828c95',GradientType=0 );
-
+font-style: italic;
+font-size: 18px;
+color: #437C90;
+line-height: 28px;
 
 }
 
