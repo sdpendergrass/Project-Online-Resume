@@ -19,15 +19,17 @@ var bio = {
     "bioPic": "images/sdp.jpg"
 }
 
-//CUSTOMIZED GREETING BASED ON TIME OF DAY
+/*CUSTOMIZED GREETING BASED ON TIME OF DAY
   var myDate = new Date();
   if ( myDate.getHours() < 12 )  {
     $("#header").append("Good Morning!");
-  } else  /* Hour is from noon to 5pm (actually to 5:59 pm) */ if ( myDate.getHours() >= 12 && myDate.getHours() <= 17 ) {
+  } else if ( myDate.getHours() >= 12 && myDate.getHours() <= 17 ) {
     $("#header").append("Good Afternoon!");
-  } else  /* the hour is after 5pm, so it is between 6pm and midnight */ if ( myDate.getHours() > 17 && myDate.getHours() <= 24 ) {
+  } else if ( myDate.getHours() > 17 && myDate.getHours() <= 24 ) {
     $("#header").append("Good Evening!");
-  } else  /* the hour is not between 0 and 24, so something is wrong */ {     $("#header").append("Hello!"); }
+  } else {     $("#header").append("Hello!");
+  }
+*/
 
 //BIO
 function displayBio() {
