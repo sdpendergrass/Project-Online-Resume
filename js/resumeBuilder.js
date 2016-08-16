@@ -1,7 +1,3 @@
-//can delete this line, test 3
-
-//check out www.d3js.org for interactive js to make skills, etc, really look good. will still need a google map on the resume.
-
 //BIO
 
 var bio = {
@@ -14,22 +10,11 @@ var bio = {
         "linkedin": "linkedin.com/in/stephenpendergrass",
         "location": "Nashville, TN"
     },
-    "welcomeMessage": "I'm a creative professional, etc, etc",
+    "welcomeMessage": "Thank you for checking out my resume!",
     "skills": ['Content Writing', 'Video Production', 'Digital & Print Publishing', 'Instructional Design','Web Development',],
-    "bioPic": "images/sdp.jpg"
+    "bioPic": "img/sdp.jpg"
 }
 
-/*CUSTOMIZED GREETING BASED ON TIME OF DAY
-  var myDate = new Date();
-  if ( myDate.getHours() < 12 )  {
-    $("#header").append("Good Morning!");
-  } else if ( myDate.getHours() >= 12 && myDate.getHours() <= 17 ) {
-    $("#header").append("Good Afternoon!");
-  } else if ( myDate.getHours() > 17 && myDate.getHours() <= 24 ) {
-    $("#header").append("Good Evening!");
-  } else {     $("#header").append("Hello!");
-  }
-*/
 
 //BIO
 function displayBio() {
@@ -125,7 +110,7 @@ var work = {
         "title": "Multimedia Production Manager",
         "location" : "Houston, TX",
         "dates": "2014 - 2016",
-        "description": "Led the development of ...",
+        "description": "Reporting to the Senior VP of Investor Relations, Strategy and Planning, helped develop and implement the company’s global communications strategies.",
         "url" : "http://www.paragonoffshore.com"
 
 
@@ -134,7 +119,7 @@ var work = {
         "title": "Multimedia Production Supervisor",
         "location" : "Houston, TX",
         "dates": "2007 - 2014",
-        "description": "Led the development of ...",
+        "description": "Working closely with executives and directors of the Fortune 500 company, developed and implemented employee-focused multimedia related to global performance initiatives.",
         "url" : "http://www.diamondoffshore.com"
 
     }, {
@@ -142,7 +127,7 @@ var work = {
         "title": "Audio-Visual Technician (Freelance & Full-time)",
         "location" : "Philadelphia, PA",
         "dates": "2005 - 2007",
-        "description": "Led the development of ...",
+        "description": "Delivered exceptional experiences for corporate clients using custom audiovisual systems in a wide range of venues.",
         "url" : "http://www.psav.com"
 
     }, {
@@ -150,7 +135,7 @@ var work = {
         "title": "Production Assistant",
         "location" : "Columbus, MS",
         "dates": "2003 - 2005",
-        "description": "Led the development of ...",
+        "description": "Supported live broadcasts as floor manager, camera operator, and in other roles as needed.",
         "url" : "http://www.wcbi.com"
 
     }]
@@ -181,11 +166,12 @@ displayWorkExperience();
 //PROJECTS
 var projects = {
     "projects": [{
-            "title": "Sample Project 1",
-            "dates": "2010",
-            "description": "Crew Security Awareness / Judo App ...",
+            "title": "Portfolio Site",
+            "dates": "2016",
+            "description": "This portfolio project was created using HTML, CSS, JavaScript, and jQuery.",
+            "url": "https://sdpendergrass.github.io/Portfolio-Pendergrass/",
             "images": [
-                "https://placehold.it/350x150",
+                "img/portfolio_screenshot.png",
 
             ]
         }
@@ -197,7 +183,8 @@ function displayProjects() {
 
     for (var i = 0; i < projects.projects.length; i++) {
         $('#projects').append(HTMLprojectStart);
-        var formattedProjectTitle = HTMLprojectTitle.replace("#", projects.projects[i].title).replace("%data%", projects.projects[i].title);
+        var formattedProjectTitle = HTMLprojectTitle.
+        replace("#", projects.projects[i].url).replace("%data%", projects.projects[i].title);
         var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
         var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
         var formattedProjectImages = HTMLprojectImage.replace("%data%", projects.projects[i].images);
