@@ -171,7 +171,7 @@ var projects = {
             "description": "This portfolio project was created using HTML, CSS, JavaScript, and jQuery.",
             "url": "https://sdpendergrass.github.io/Portfolio-Pendergrass/",
             "images": [
-                "img/portfolio_screenshot.png",
+                "img/portfolio.screenshot.png",
 
             ]
         }
