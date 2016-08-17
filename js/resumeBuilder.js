@@ -10,7 +10,7 @@ var bio = {
         "linkedin": "linkedin.com/in/stephenpendergrass",
         "location": "Nashville, TN"
     },
-    "welcomeMessage": "Thank you for checking out my interactive resume!",
+    "welcomeMessage": "Thank you for checking out my interactive resume, which was created with HTML, CSS, JavaScript, and jQuery.",
     "skills": ['Content Writing', 'Video Production', 'Digital & Print Publishing', 'Instructional Design','Web Development',],
     "bioPic": "img/sdp.jpg"
 };

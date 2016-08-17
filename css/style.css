@@ -110,7 +110,7 @@ a {
   -webkit-flex-wrap: wrap;
   flex-direction: column;
   flex-wrap: wrap;
-
+  justify-content: space-around;
   padding: 0px;
 }
 .orange {
@@ -230,6 +230,7 @@ span {
   #skills-h3,
   .biopic {
     display: block;
+    flex-basis: auto;
   }
 }
 
