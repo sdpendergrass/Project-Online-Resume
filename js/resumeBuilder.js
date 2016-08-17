@@ -77,6 +77,12 @@ var education = {
         "majors": ["Mass Communications (focused on film and television production)"],
         "date": 2009,
         "url": "https://www.usm.edu"
+    }],
+    "onlinecourses": [{
+        "title": "Front End Web Developer Nanodegree",
+        "school": "Udacity",
+        "dates": "2016-Present",
+        "url": "https://www.udacity.com/"
     }]
 }
 
@@ -95,7 +101,16 @@ function displayEducation() {
         $('.education-entry:last').append(formattedSchoolMajors);
 
     }
+    for (var i = 0; i < education.onlinecourses.length; i++) {
+        $('#education').append(HTMLonlineClasses);
+        var formattedOnlineTitle = HTMLonlineTitle.replace("#", education.onlinecourses[i].url).replace("%data%", education.onlinecourses[i].title);
+        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlinecourses[i].school);
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlinecourses[i].dates);
+        $('.education-entry:last').append(formattedOnlineTitle + formattedOnlineSchool);
+        $('.education-entry:last').append(formattedOnlineDates);
 
+
+    }
 }
 
 displayEducation();
