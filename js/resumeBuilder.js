@@ -6,43 +6,36 @@ var bio = {
         "mobile": "832-726-7119",
         "email": "StephenDPendergrass@gmail.com",
         "github": "github.com/sdpendergrass",
-        "linkedin": "linkedin.com/in/stephenpendergrass",
+        "twitter": "@twitter",
         "location": "Nashville, TN"
     },
     "welcomeMessage": "Thank you for checking out my interactive resume!",
     "skills": ['Content Writing', 'Video Production', 'Digital & Print Publishing', 'Instructional Design', 'Web Development', ],
-    "bioPic": "img/sdp.jpg"
+    "biopic": "img/sdp.jpg"
 };
 
 
 //BIO
-function displayBio() {
+bio.display = function() {
 
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-    $("#header").prepend(formattedRole);
-    $("#header").prepend(formattedName);
-    $("#header").append(formattedMessage);
-    $("#header").append(formattedBioPic);
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+    $("#header").prepend(formattedName, formattedRole);
+    $("#header").append(formattedMessage, formattedBioPic);
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
-    var formattedLinkedIn = HTMLlinkedIn.replace("%data%", bio.contacts.linkedin);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
     var contactInfo = ["#topContacts", "#footerContacts"];
     for (var i = 0; i < contactInfo.length; i++) {
         id = contactInfo[i];
-        $(id).append(formattedMobile);
-        $(id).append(formattedEmail);
-        $(id).append(formattedGitHub);
-        $(id).append(formattedLinkedIn);
-        $(id).append(formattedLocation);
+        $(id).append(formattedMobile, formattedEmail, formattedGitHub, formattedTwitter, formattedLocation);
     }
-
 
 
     $("#header").append(HTMLskillsStart);
@@ -53,10 +46,10 @@ function displayBio() {
     }
 
 
-}
+};
 
 
-displayBio();
+bio.display();
 
 
 
@@ -67,17 +60,17 @@ var education = {
         "location": "Cambridge, MA",
         "degree": "Master's Degree",
         "majors": ["Journalism (focused on professional writing and multimedia development"],
-        "date": 2013,
+        "dates": "2013",
         "url": "https://www.extension.harvard.edu"
     }, {
         "name": "University of Southern Mississippi",
         "location": "Hattiesburg, MS",
         "degree": "Bachelor's Degree",
         "majors": ["Mass Communications (focused on film and television production)"],
-        "date": 2009,
+        "dates": "2009",
         "url": "https://www.usm.edu"
     }],
-    "onlinecourses": [{
+    "onlineCourses": [{
         "title": "Front End Web Developer Nanodegree",
         "school": "Udacity",
         "dates": "2016-Present",
@@ -85,13 +78,13 @@ var education = {
     }]
 };
 
-function displayEducation() {
+education.display = function() {
 
     for (var i = 0; i < education.schools.length; i++) {
         $('#education').append(HTMLschoolStart);
         var formattedSchoolName = HTMLschoolName.replace("#", education.schools[i].url).replace("%data%", education.schools[i].name);
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
-        var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].date);
+        var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
         var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
         var formattedSchoolMajors = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
         $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree);
@@ -101,19 +94,19 @@ function displayEducation() {
 
     }
     $('#education').append(HTMLonlineClasses);
-    for (var c = 0; c < education.onlinecourses.length; c++) {
+    for (var c = 0; c < education.onlineCourses.length; c++) {
         $('#education').append(HTMLschoolStart);
-        var formattedOnlineTitle = HTMLonlineTitle.replace("#", education.onlinecourses[c].url).replace("%data%", education.onlinecourses[c].title);
-        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlinecourses[c].school);
-        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlinecourses[c].dates);
+        var formattedOnlineTitle = HTMLonlineTitle.replace("#", education.onlineCourses[c].url).replace("%data%", education.onlineCourses[c].title);
+        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[c].school);
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[c].dates);
         $('.education-entry:last').append(formattedOnlineTitle + formattedOnlineSchool);
         $('.education-entry:last').append(formattedOnlineDates);
 
 
     }
-}
+};
 
-displayEducation();
+education.display();
 
 
 
@@ -156,7 +149,7 @@ var work = {
     }]
 };
 
-function displayWorkExperience() {
+workExperience.display = function() {
 
     for (var i = 0; i < work.jobs.length; i++) {
         $('#workExperience').append(HTMLworkStart);
@@ -172,9 +165,9 @@ function displayWorkExperience() {
 
     }
 
-}
+};
 
-displayWorkExperience();
+workExperience.display();
 
 
 
@@ -185,34 +178,32 @@ var projects = {
         "dates": "2016",
         "description": "My portfolio site was created using HTML, CSS, JavaScript, and jQuery.",
         "url": "https://sdpendergrass.github.io/Portfolio-Pendergrass/",
-        "images": [
-            "img/portfolio.screenshot.jpg",
-
-        ]
+        "images": ["img/portfolio.screenshot.jpg"]
+    }, {
+        "title": "Placeholder Project",
+        "dates": "2016",
+        "description": "Placeholder for description.",
+        "url": "https://sdpendergrass.github.io/Portfolio-Pendergrass/",
+        "images": ["img/portfolio.screenshot.jpg"]
     }]
+
 };
 
 
-function displayProjects() {
+projects.display = function() {
 
     for (var i = 0; i < projects.projects.length; i++) {
         $('#projects').append(HTMLprojectStart);
-        var formattedProjectTitle = HTMLprojectTitle.
-        replace("#", projects.projects[i].url).replace("%data%", projects.projects[i].title);
+        var formattedProjectTitle = HTMLprojectTitle.replace("#", projects.projects[i].url).replace("%data%", projects.projects[i].title);
         var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
         var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
-        var formattedProjectImages = HTMLprojectImage.replace("%data%", projects.projects[i].images);
-        var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
-        $('.project-entry').append(formattedProjectTitle);
-        $('.project-entry').append(formattedProjectDates);
-        $('.project-entry').append(formattedProjectDescription);
-        $('.project-entry').append(formattedProjectImages);
+        var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images);
+        $('.project-entry:last').append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImage);
 
     }
+};
 
-}
-
-displayProjects();
+projects.display();
 
 
 
