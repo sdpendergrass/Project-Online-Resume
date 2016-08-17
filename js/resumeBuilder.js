@@ -1,5 +1,4 @@
 //BIO
-
 var bio = {
     "name": "Stephen Pendergrass",
     "role": "Multimedia Developer",
@@ -10,8 +9,8 @@ var bio = {
         "linkedin": "linkedin.com/in/stephenpendergrass",
         "location": "Nashville, TN"
     },
-    "welcomeMessage": "Thank you for checking out my interactive resume which was developed with HTML, CSS, JavaScript, and jQuery.",
-    "skills": ['Content Writing', 'Video Production', 'Digital & Print Publishing', 'Instructional Design','Web Development',],
+    "welcomeMessage": "Thank you for checking out my interactive resume!",
+    "skills": ['Content Writing', 'Video Production', 'Digital & Print Publishing', 'Instructional Design', 'Web Development', ],
     "bioPic": "img/sdp.jpg"
 };
 
@@ -29,7 +28,7 @@ function displayBio() {
     $("#header").append(formattedBioPic);
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    var formattedEmail = HTMLemail .replace("%data%", bio.contacts.email);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedLinkedIn = HTMLlinkedIn.replace("%data%", bio.contacts.linkedin);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
@@ -42,7 +41,7 @@ function displayBio() {
         $(id).append(formattedGitHub);
         $(id).append(formattedLinkedIn);
         $(id).append(formattedLocation);
-        }
+    }
 
 
 
@@ -51,7 +50,7 @@ function displayBio() {
     for (var s = 0; s < bio.skills.length; s++) {
         var formattedSkills = HTMLskills.replace("%data%", bio.skills[s]);
         $(skills).append(formattedSkills);
-        }
+    }
 
 
 }
@@ -124,35 +123,35 @@ var work = {
     "jobs": [{
         "employer": "Paragon Offshore",
         "title": "Multimedia Production Manager",
-        "location" : "Houston, TX",
+        "location": "Houston, TX",
         "dates": "2014 - 2016",
         "description": "Reporting to the Senior VP of Investor Relations, Strategy and Planning, helped develop and implement the company’s global communications strategies.",
-        "url" : "http://www.paragonoffshore.com"
+        "url": "http://www.paragonoffshore.com"
 
 
     }, {
         "employer": "Diamond Offshore",
         "title": "Multimedia Production Supervisor",
-        "location" : "Houston, TX",
+        "location": "Houston, TX",
         "dates": "2007 - 2014",
         "description": "Working closely with executives and directors of the Fortune 500 company, developed and implemented employee-focused multimedia related to global performance initiatives.",
-        "url" : "http://www.diamondoffshore.com"
+        "url": "http://www.diamondoffshore.com"
 
     }, {
         "employer": "PSAV",
         "title": "Audio-Visual Technician (Freelance & Full-time)",
-        "location" : "Philadelphia, PA",
+        "location": "Philadelphia, PA",
         "dates": "2005 - 2007",
         "description": "Delivered exceptional experiences for corporate clients using custom audiovisual systems in a wide range of venues.",
-        "url" : "http://www.psav.com"
+        "url": "http://www.psav.com"
 
     }, {
         "employer": "WCBI (CBS Affiliate)",
         "title": "Production Assistant",
-        "location" : "Columbus, MS",
+        "location": "Columbus, MS",
         "dates": "2003 - 2005",
         "description": "Supported live broadcasts as floor manager, camera operator, and in other roles as needed.",
-        "url" : "http://www.wcbi.com"
+        "url": "http://www.wcbi.com"
 
     }]
 };
@@ -182,16 +181,15 @@ displayWorkExperience();
 //PROJECTS
 var projects = {
     "projects": [{
-            "title": "Portfolio Site",
-            "dates": "2016",
-            "description": "My portfolio site was created using HTML, CSS, JavaScript, and jQuery.",
-            "url": "https://sdpendergrass.github.io/Portfolio-Pendergrass/",
-            "images": [
-                "img/portfolio.screenshot.jpg",
+        "title": "Portfolio Site",
+        "dates": "2016",
+        "description": "My portfolio site was created using HTML, CSS, JavaScript, and jQuery.",
+        "url": "https://sdpendergrass.github.io/Portfolio-Pendergrass/",
+        "images": [
+            "img/portfolio.screenshot.jpg",
 
-            ]
-        }
-    ]
+        ]
+    }]
 };
 
 
@@ -219,6 +217,3 @@ displayProjects();
 
 
 $('#mapDiv').append(googleMap);
-
-
-
