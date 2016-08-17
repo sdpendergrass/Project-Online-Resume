@@ -10,10 +10,10 @@ var bio = {
         "linkedin": "linkedin.com/in/stephenpendergrass",
         "location": "Nashville, TN"
     },
-    "welcomeMessage": "Thank you for checking out my resume!",
+    "welcomeMessage": "Thank you for checking out my interactive resume!",
     "skills": ['Content Writing', 'Video Production', 'Digital & Print Publishing', 'Instructional Design','Web Development',],
     "bioPic": "img/sdp.jpg"
-}
+};
 
 
 //BIO
@@ -48,8 +48,8 @@ function displayBio() {
 
     $("#header").append(HTMLskillsStart);
 
-    for (var i = 0; i < bio.skills.length; i++) {
-        var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+    for (var s = 0; s < bio.skills.length; s++) {
+        var formattedSkills = HTMLskills.replace("%data%", bio.skills[s]);
         $(skills).append(formattedSkills);
         }
 
@@ -84,7 +84,7 @@ var education = {
         "dates": "2016-Present",
         "url": "https://www.udacity.com/"
     }]
-}
+};
 
 function displayEducation() {
 
@@ -101,11 +101,12 @@ function displayEducation() {
         $('.education-entry:last').append(formattedSchoolMajors);
 
     }
-    for (var i = 0; i < education.onlinecourses.length; i++) {
-        $('#education').append(HTMLonlineClasses);
-        var formattedOnlineTitle = HTMLonlineTitle.replace("#", education.onlinecourses[i].url).replace("%data%", education.onlinecourses[i].title);
-        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlinecourses[i].school);
-        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlinecourses[i].dates);
+    $('#education').append(HTMLonlineClasses);
+    for (var c = 0; c < education.onlinecourses.length; c++) {
+        $('#education').append(HTMLschoolStart);
+        var formattedOnlineTitle = HTMLonlineTitle.replace("#", education.onlinecourses[c].url).replace("%data%", education.onlinecourses[c].title);
+        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlinecourses[c].school);
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlinecourses[c].dates);
         $('.education-entry:last').append(formattedOnlineTitle + formattedOnlineSchool);
         $('.education-entry:last').append(formattedOnlineDates);
 
@@ -154,7 +155,7 @@ var work = {
         "url" : "http://www.wcbi.com"
 
     }]
-}
+};
 
 function displayWorkExperience() {
 
@@ -183,7 +184,7 @@ var projects = {
     "projects": [{
             "title": "Portfolio Site",
             "dates": "2016",
-            "description": "This portfolio project was created using HTML, CSS, JavaScript, and jQuery.",
+            "description": "My portfolio site was created using HTML, CSS, JavaScript, and jQuery.",
             "url": "https://sdpendergrass.github.io/Portfolio-Pendergrass/",
             "images": [
                 "img/portfolio.screenshot.jpg",
@@ -191,7 +192,7 @@ var projects = {
             ]
         }
     ]
-}
+};
 
 
 function displayProjects() {
